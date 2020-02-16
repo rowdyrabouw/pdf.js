@@ -1,0 +1,19 @@
+<h2>Overview</h2>
+<p>Example to demonstrate PDF.js library usage with Webpack.</p>
+<h2>Getting started</h2>
+<p>Install the example dependencies and build the project:</p>
+<pre><code>$ gulp dist-install
+$ cd examples/webpack
+$ npm install
+$ ./node_modules/webpack/bin/webpack.js
+</code></pre>
+<p>You can observe the build results by running <code>gulp server</code> and navigating to
+http://localhost:8888/examples/webpack/index.html.</p>
+<p>Refer to the <code>main.js</code> and <code>webpack.config.js</code> files for the source code.
+Note that PDF.js packaging requires packaging of the main application and
+the worker code, and the <code>workerSrc</code> path shall be set to the latter file.</p>
+<h2>Worker loading</h2>
+<p>If you are getting the <code>Setting up fake worker</code> warning, make sure you are importing <code>pdfjs-dist/webpack</code> which is the zero-configuration method for Webpack users:</p>
+<pre><code>import pdfjsLib from 'pdfjs-dist/webpack';
+</code></pre>
+<p>For a full working example refer to <a href="https://github.com/yurydelendik/pdfjs-react">this repository</a>.</p>
